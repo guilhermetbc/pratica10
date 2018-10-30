@@ -14,7 +14,7 @@ class Autor:
 
 class Livro():
   def __init__(self, titulo, ano, autores=[]):
-    self._titulo = titulo
+    self.titulo = titulo
     self.ano = ano
     self.autores = autores
 
@@ -42,7 +42,7 @@ class Biblioteca:
       for autor in livro.autores:
         if not livrosdoautor.get(autor.nome_como_citado):
           livrosdoautor[autor.nome_como_citado] = []
-          livrosdoautor[autor.nome_como_citado].append(livro)
+        livrosdoautor[autor.nome_como_citado].append(livro)
     return livrosdoautor
   
   def __str__(self):
