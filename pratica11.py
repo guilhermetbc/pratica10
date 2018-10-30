@@ -42,10 +42,8 @@ class Biblioteca:
       for autor in livro.autores:
         if not livrosdoautor.get(autor.nome_como_citado):
           livrosdoautor[autor.nome_como_citado] = []
-    
-    livrosdoautor[autor.nome_como_citado].append(livro)
+        livrosdoautor[autor.nome_como_citado].append(str(livro))
     return "Biblioteca: " + str(livrosdoautor)
-  
 
 def main():
   autor1 = Autor('Carlos', 'de Andrade', '31/10/1902', nomedomeio='Drummond')
@@ -58,7 +56,7 @@ def main():
   print("\n")
 
   livro1 = Livro(titulo = 'Livro 1', ano = 1940, autores = [autor1, autor2])
-  livro2 = Livro(titulo = 'Livro 2', ano = 1950, autores = [autor3])
+  livro2 = Livro(titulo = 'Livro 2', ano = 1950, autores = [autor2, autor3])
   try:
     livro3 = Livro(titulo = '', ano = 1960, autores = [autor1])
   except ValueError as e:
